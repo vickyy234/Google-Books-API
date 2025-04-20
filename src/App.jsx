@@ -29,12 +29,12 @@ function App() {
     <div className="container-fixed d-flex flex-column align-items-center mt-5 justify-content-center gap-3">
       <h1 className='text-danger'>Google Books</h1>
       <div className='row w-50 justify-content-center gap-2' style={{ minWidth: "350px" }}>
-        <div className='col-8' style={{ minWidth: "250px" }}><input className='form-control fw-semibold' type="text" value={query} placeholder='Enter book name...' onChange={handleQueryChange} onKeyDown={handleKeyPress}/></div>
+        <div className='col-8' style={{ minWidth: "250px" }}><input className='form-control fw-semibold' type="text" value={query} placeholder='Search Books from Google API' onChange={handleQueryChange} onKeyDown={handleKeyPress} /></div>
         <div className='col-3' style={{ minWidth: "100px" }}><button className='btn btn-outline-primary w-100 fw-bold' onClick={fetchBookData}>Search</button></div>
       </div>
-      {books && <div className="container-fluid d-flex flex-row flex-wrap mx-5 gap-4 align-items-center justify-content-center">
+      {books && <div className="container-fluid row d-flex flex-wrap mx-5 gap-4 justify-content-center">
         {books.map((item, index) => (
-          <div className='card col-3 p-3 align-items-center bg-light text-center' key={index}>
+          <div className='card p-3 align-items-center bg-light text-center d-flex' key={index} style={{maxWidth:"300px"}}>
             {item.volumeInfo.title && <h5 className='fw-bold justify-content-center'>{item.volumeInfo.title}</h5>}
             <img src={item.volumeInfo.imageLinks?.thumbnail} alt="Thumbnail unavailable" width={120} height={180} />
             {item.volumeInfo.authors && <p className="fw-semibold m-1"> Authors: {item.volumeInfo.authors.join(", ")} </p>}
