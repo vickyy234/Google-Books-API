@@ -11,6 +11,10 @@ function App() {
   }
 
   const fetchBookData = async () => {
+    if (query === '') {
+      alert("Enter Book name to search")
+      return;
+    }
     try {
       const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=0&maxResults=40`)
       setBooks(response.data.items)
@@ -26,11 +30,11 @@ function App() {
   }
 
   return (
-    <div className="container-fixed d-flex flex-column align-items-center mt-5 justify-content-center gap-3">
-      <h1 className='text-danger'>Google Books</h1>
+    <div className="container-fixed d-flex flex-column align-items-center my-5 justify-content-center gap-3">
+      <h1 className='text-danger fw-bold'>Google Books</h1>
       <div className='row w-50 justify-content-center gap-2' style={{ minWidth: "350px" }}>
         <div className='col-8' style={{ minWidth: "250px" }}><input className='form-control fw-semibold' type="text" value={query} placeholder='Search Books from Google API' onChange={handleQueryChange} onKeyDown={handleKeyPress} /></div>
-        <div className='col-3' style={{ minWidth: "100px" }}><button className='btn btn-outline-primary w-100 fw-bold' onClick={fetchBookData}>Search</button></div>
+        <div className='col-3' style={{ minWidth: "100px" }}><button className='btn btn-outline-danger w-100 fw-bold' onClick={fetchBookData}>Search</button></div>
       </div>
       {books && <div className="container-fluid row d-flex flex-wrap mx-5 gap-4 justify-content-center">
         {books.map((item, index) => (
