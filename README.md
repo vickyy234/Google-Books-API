@@ -1,4 +1,4 @@
-# React Calculator App
+# Google Books Search App
 
 This is a simple and responsive book search application built using **React** and **Bootstrap 5**. It allows users to search for books using the Google Books API and displays relevant information in a user-friendly card layout.
 
