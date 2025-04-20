@@ -27,9 +27,12 @@ function App() {
       </div>
       {books && <div className="container-fluid d-flex flex-row flex-wrap mx-5 gap-4 align-items-center justify-content-center">
         {books.map((item, index) => (
-          <div className='card col-3 p-3 align-items-center bg-light' key={index}>
-            <h5>{item.volumeInfo.title}</h5>
-            <img src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} width={120} height={180} />
+          <div className='card col-3 p-3 align-items-center bg-light text-center' key={index}>
+            {item.volumeInfo.title && <h5 className='fw-bold justify-content-center'>{item.volumeInfo.title}</h5>}
+            <img src={item.volumeInfo.imageLinks?.thumbnail} alt="Thumbnail unavailable" width={120} height={180} />
+            {item.volumeInfo.authors && <p className="fw-semibold m-1"> Authors: {item.volumeInfo.authors.join(", ")} </p>}
+            {item.volumeInfo.publishedDate && <p className='m-1'>published Date: {item.volumeInfo.publishedDate} </p>}
+            {item.volumeInfo.categories && <p className='m-1'>categories: {item.volumeInfo.categories.join(", ")}</p>}
           </div>
         ))}
       </div>}
