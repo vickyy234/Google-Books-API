@@ -18,11 +18,18 @@ function App() {
       setBooks([])
     }
   }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      fetchBookData()
+    }
+  }
+
   return (
     <div className="container-fixed d-flex flex-column align-items-center mt-5 justify-content-center gap-3">
       <h1 className='text-danger'>Google Books</h1>
       <div className='row w-50 justify-content-center gap-2' style={{ minWidth: "350px" }}>
-        <div className='col-8' style={{ minWidth: "250px" }}><input className='form-control fw-semibold' type="text" value={query} placeholder='Enter book name...' onChange={handleQueryChange} /></div>
+        <div className='col-8' style={{ minWidth: "250px" }}><input className='form-control fw-semibold' type="text" value={query} placeholder='Enter book name...' onChange={handleQueryChange} onKeyDown={handleKeyPress}/></div>
         <div className='col-3' style={{ minWidth: "100px" }}><button className='btn btn-outline-primary w-100 fw-bold' onClick={fetchBookData}>Search</button></div>
       </div>
       {books && <div className="container-fluid d-flex flex-row flex-wrap mx-5 gap-4 align-items-center justify-content-center">
