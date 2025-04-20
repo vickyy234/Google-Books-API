@@ -34,7 +34,7 @@ function App() {
       </div>
       {books && <div className="container-fluid row d-flex flex-wrap mx-5 gap-4 justify-content-center">
         {books.map((item, index) => (
-          <div className='card p-3 align-items-center bg-light text-center d-flex' key={index} style={{maxWidth:"300px"}}>
+          <div className='card p-3 align-items-center bg-light text-center d-flex' key={index} style={{ maxWidth: "300px" }}>
             {item.volumeInfo.title && <h5 className='fw-bold justify-content-center'>{item.volumeInfo.title}</h5>}
             <img src={item.volumeInfo.imageLinks?.thumbnail} alt="Thumbnail unavailable" width={120} height={180} />
             {item.volumeInfo.authors && <p className="fw-semibold m-1"> Authors: {item.volumeInfo.authors.join(", ")} </p>}
