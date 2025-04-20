@@ -1,12 +1,30 @@
-# React + Vite
+# React Calculator App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a simple and responsive book search application built using **React** and **Bootstrap 5**. It allows users to search for books using the Google Books API and displays relevant information in a user-friendly card layout.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Displays book title, thumbnail, authors, publisher, published date, and categories
 
-## Expanding the ESLint configuration
+- Clean and simple UI using Bootstrap 5
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Conditional rendering of missing data (e.g., when thumbnails or authors are unavailable)
+
+- Fully responsive design for all devices
+
+## Tech Stack
+
+- [React](https://react.dev/)
+- [Bootstrap 5](https://getbootstrap.com/)
+- JavaScript (ES6)
+
+## Live Preview
+
+The website is live and accessible here:
+[Link Here](https://google-bookss.vercel.app/)
+
+## License
+
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.  
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
