@@ -17,7 +17,7 @@ function App() {
       return;
     }
     try {
-      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=0&maxResults=40`)
+      const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&startIndex=0&maxResults=40&key=${import.meta.env.VITE_API_KEY}`)
       if (response.data.items === undefined) {
         alert("No Books Found!")
         setBooks([])
@@ -25,8 +25,9 @@ function App() {
       else {
         setBooks(response.data.items)
       }
-    } catch (e) {
-      setBooks([])
+    } catch (error) {
+      alert(error.message)
+      alert("Try again later! Error on Google API")
     }
   }
 
